@@ -8,5 +8,17 @@
  * Controller of the feedbackFormApp
  */
 angular.module('feedbackFormApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('FeedbackFormCtrl', function ($scope) {
+    this.showFeedbackForm = false,
+
+    this.showForm = function() {
+      this.showFeedbackForm = !this.showFeedbackForm;
+    };
+  })
+
+  .directive('feedback-form', function() {
+    return {
+      templateUrl: 'feedback-form.html'
+    };
   });
+
