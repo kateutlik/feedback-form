@@ -22,18 +22,48 @@
     <!-- Add your site or application content here -->
     <div class="container">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">feedbackForm</h3>
+        <h3 class="text-muted">About Us</h3>
       </div>
 
-      <div ng-view=""></div>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor nisi quis lacinia tincidunt. Nunc
+           vulputate ornare laoreet. Vestibulum sit amet ex non augue pharetra commodo sed sed dui. Integer tincidunt,
+           ipsum a gravida finibus, nisi lacus malesuada nisi, eget feugiat velit massa a ipsum. Nam euismod efficitur
+           metus, non gravida justo hendrerit sed.
+        </p>
+        <p>
+           Vestibulum aliquet ornare nisl non placerat. Sed id mollis tortor.
+           Morbi pharetra viverra mattis. Nunc sapien risus, consectetur vitae consequat ut, fringilla fringilla metus.
+           Mauris risus turpis, suscipit eget auctor non, dictum nec ligula. Sed ac nisl semper, tempor quam at, mattis
+           quam. Mauris ornare ac ante vitae bibendum.
+        </p>
+        <p>
+           Ut mattis erat vitae massa elementum, ut sagittis tortor tempor.
+           Nullam lorem orci, tincidunt quis nunc in, condimentum faucibus enim.
+        </p>
+
+        <button type="button" class="btn btn-info btn-lg btn-block show-feedback-form" ng-hide="showFeedbackForm" ng-click="showFeedbackForm = !showFeedbackForm" ng-init="showFeedbackForm = 0">Please let us know what you think about us</button>
+        <form role="form" ng-show="showFeedbackForm">
+          <h3 class="text-center">Feedback Form</h3>
+          <div class="form-group">
+            <label for="feedbackEmail">What's your e-mail address?</label>
+            <input type="email" class="form-control" id="feedbackEmail" placeholder="Enter email" />
+          </div>
+          <div class="form-group">
+            <label for="feedbackAge">How old are you?</label>
+            <input type="text" class="form-control" id="feedbackAge" placeholder="Enter your age" />
+          </div>
+          <div class="form-group">
+            <label for="feedbackComment">Leave your comment, please.</label>
+            <textarea class="form-control" rows="3" id="feedbackComment" placeholder="Enter comment"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Send us your feedback</button>
+        </form>
+      </div>
 
       <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p>developed by Katherina Utlik</p>
       </div>
     </div>
 
