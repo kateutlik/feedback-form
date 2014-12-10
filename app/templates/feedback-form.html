@@ -1,0 +1,55 @@
+<div class="feedbackFormComponent" ng-controller="FeedbackFormCtrl as form">
+  <button type="button" class="btn btn-info btn-lg btn-block show-feedback-form-button" ng-hide="form.showFeedbackForm" ng-click="form.showForm()">{{form.content.showButtonText}}</button>
+  <form class="feedbackForm ng-hide" role="form" name="feedbackForm" ng-show="form.showFeedbackForm" novalidate>
+    <div class="form-group">
+      <h3 class="text-muted">{{form.content.title}}</h3>
+      <span class="glyphicon glyphicon-remove-circle" ng-click="form.showForm()"></span>
+    </div>
+    <div class="form-group" ng-class="{'has-error': feedbackForm.email.$invalid && !feedbackForm.email.$pristine, 'has-success': feedbackForm.email.$valid}">
+      <label class="control-label" for="feedbackEmail">{{form.content.feedbackEmailLabel}}</label>
+      <input type="email" ng-model="email" name="email" class="form-control" id="feedbackEmail" placeholder="{{form.content.feedbackEmailPlaceholder}}" required />
+      <div class="tooltip bottom" role="tooltip">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">
+          <span ng-show="feedbackForm.email.$error.required">
+            {{form.content.errorMessageEmailRequired}}
+          </span>
+          <span ng-show="feedbackForm.email.$error.email">
+            {{form.content.errorMessageEmailsFormat}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': feedbackForm.age.$invalid && !feedbackForm.age.$pristine, 'has-success': feedbackForm.age.$valid}" >
+      <label class="control-label" for="feedbackAge">{{form.content.feedbackAgeLabel}}</label>
+      <input type="number" min="{{form.config.minAge}}" ng-model="age" name="age" class="form-control" id="feedbackAge" placeholder="{{form.content.feedbackAgePlaceholder}}" required />
+      <div class="tooltip bottom" role="tooltip">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">
+          <span ng-show="feedbackForm.age.$error.required">
+            {{form.content.errorMessageAgeRequired}}
+          </span>
+          <span ng-show="feedbackForm.age.$error.min">
+            {{form.content.errorMessageAgeMin}}
+          </span>
+          <span ng-show="feedbackForm.age.$error.number">
+            {{form.content.errorMessageAgeFormat}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" ng-class="{'has-error': feedbackForm.comment.$invalid && !feedbackForm.comment.$pristine, 'has-success': feedbackForm.comment.$valid}">
+      <label class="control-label" for="feedbackComment">{{form.content.feedbackCommentLabel}}</label>
+      <textarea ng-model="comment" name="comment" class="form-control" rows="3" id="feedbackComment" placeholder="{{form.content.feedbackCommentPlaceholder}}" required></textarea>
+      <div class="tooltip bottom" role="tooltip">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner">
+          <span ng-show="feedbackForm.comment.$error.required">
+            {{form.content.errorMessageCommentRequired}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <button type="submit" ng-disabled="feedbackForm.comment.$invalid" class="btn btn-primary btn-lg btn-block submit-button">{{form.content.submitButtonText}}</button>
+  </form>
+</div>

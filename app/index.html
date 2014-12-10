@@ -42,28 +42,7 @@
            Ut mattis erat vitae massa elementum, ut sagittis tortor tempor.
            Nullam lorem orci, tincidunt quis nunc in, condimentum faucibus enim.
         </p>
-        <div class="feedbackFormComponent" ng-controller="FeedbackFormCtrl as form">
-          <button type="button" class="btn btn-info btn-lg btn-block show-feedback-form-button" ng-hide="form.showFeedbackForm" ng-click="form.showForm()">Please let us know what you think about us</button>
-          <form class="feedbackForm ng-hide" role="form" ng-show="form.showFeedbackForm">
-            <div class="form-group">
-              <h3 class="text-muted">Feedback Form</h3>
-              <span class="glyphicon glyphicon-remove-circle" ng-click="form.showForm()"></span>
-            </div>
-            <div class="form-group">
-              <label for="feedbackEmail">What's your e-mail address?</label>
-              <input type="email" class="form-control" id="feedbackEmail" placeholder="Enter email" />
-            </div>
-            <div class="form-group">
-              <label for="feedbackAge">How old are you?</label>
-              <input type="text" class="form-control" id="feedbackAge" placeholder="Enter your age" />
-            </div>
-            <div class="form-group">
-              <label for="feedbackComment">Leave your comment, please.</label>
-              <textarea class="form-control" rows="3" id="feedbackComment" placeholder="Enter comment"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block submit-button">Send us your feedback</button>
-          </form>
-        </div>
+        <feedback-form></feedback-form>
       </div>
 
       <div class="footer">
@@ -118,7 +97,8 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/feedback-form.js"></script>
+        <script src="scripts/directives/feedback-form.js"></script>
         <!-- endbuild -->
 </body>
 </html>

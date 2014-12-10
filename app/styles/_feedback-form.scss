@@ -17,6 +17,30 @@
 
     .form-group {
       position: relative;
+
+      .tooltip {
+        width: 50%;
+        margin-left: 25%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        -webkit-transition: all linear 0.3s;
+        transition: all linear 0.3s;
+
+        .tooltip-arrow {
+          border-bottom-color: rgba(169, 68, 66, 0.8);;
+        }
+
+        .tooltip-inner {
+          max-width: 100%;
+          padding: 5px 8px;
+          background: rgba(169, 68, 66, 0.8);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      &.has-error .tooltip {
+        opacity: 1;
+      }
     }
 
     h3 {
@@ -43,7 +67,8 @@
   }
 
 
-  .ng-hide {
+  .feedbackForm.ng-hide,
+  .show-feedback-form-button.ng-hide {
     /* this is just another form of hiding an element */
     display: block!important;
     max-height: 0;
