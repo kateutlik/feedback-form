@@ -20,33 +20,21 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container" ng-controller="MainCtrl as main">
       <div class="header">
-        <h3 class="text-muted">About Us</h3>
+        <ul class="nav nav-pills pull-right">
+          <li ng-class="menuClass('home')"><a ng-href="#home">Home</a></li>
+          <li ng-class="menuClass('about')"><a ng-href="#about">About</a></li>
+          <li ng-class="menuClass('contacts')"><a ng-href="#contacts">Contacts</a></li>
+        </ul>
+        <h3 class="text-muted" ng-bind="header"></h3>
       </div>
 
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor nisi quis lacinia tincidunt. Nunc
-           vulputate ornare laoreet. Vestibulum sit amet ex non augue pharetra commodo sed sed dui. Integer tincidunt,
-           ipsum a gravida finibus, nisi lacus malesuada nisi, eget feugiat velit massa a ipsum. Nam euismod efficitur
-           metus, non gravida justo hendrerit sed.
-        </p>
-        <p>
-           Vestibulum aliquet ornare nisl non placerat. Sed id mollis tortor.
-           Morbi pharetra viverra mattis. Nunc sapien risus, consectetur vitae consequat ut, fringilla fringilla metus.
-           Mauris risus turpis, suscipit eget auctor non, dictum nec ligula. Sed ac nisl semper, tempor quam at, mattis
-           quam. Mauris ornare ac ante vitae bibendum.
-        </p>
-        <p>
-           Ut mattis erat vitae massa elementum, ut sagittis tortor tempor.
-           Nullam lorem orci, tincidunt quis nunc in, condimentum faucibus enim.
-        </p>
-        <feedback-form></feedback-form>
+      <div class="content" ng-view>
       </div>
 
       <div class="footer">
-        <p>developed by Katherina Utlik</p>
+        <p>developed by <a href="https://www.facebook.com/katherina.utlik">{{developerName}}</a></p>
       </div>
     </div>
 
@@ -96,9 +84,14 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/feedback-form.js"></script>
+
         <script src="scripts/directives/feedback-form.js"></script>
+        <script src="scripts/directives/about-text.js"></script>
         <!-- endbuild -->
 </body>
 </html>

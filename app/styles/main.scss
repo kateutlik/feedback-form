@@ -35,6 +35,11 @@ body {
     line-height: 40px;
     padding-bottom: 19px;
   }
+
+  .nav-pills > li > a {
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+  }
 }
 
 .content {
@@ -54,12 +59,11 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
   border-bottom: 1px solid #e5e5e5;
 
   .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+    font-size: 18px;
+    padding: 10px 24px;
   }
 }
 
@@ -93,6 +97,13 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+.productsList {
+  @include clearfix;
+}
+
+.product {
+  float: left;
 }
 
 @import "_feedback-form.scss";

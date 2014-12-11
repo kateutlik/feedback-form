@@ -21,16 +21,16 @@
       ])
       .config(function($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when('/home', {
               templateUrl: 'views/main.html',
-              controller: 'MainCtrl'
+              controller: 'HomeCtrl'
             })
             .when('/about', {
               templateUrl: 'views/about.html',
               controller: 'AboutCtrl'
             })
             .otherwise({
-              redirectTo: '/'
+              redirectTo: '/home'
             });
       });
 
