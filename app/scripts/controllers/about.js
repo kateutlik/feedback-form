@@ -7,7 +7,9 @@
  * # AboutCtrl
  * Controller of the feedbackFormApp
  */
-angular.module('feedbackFormApp')
-  .controller('AboutCtrl', function ($scope, $rootScope) {
-      $rootScope.header = 'About Us';
-  });
+(function() {
+  angular.module('feedbackFormApp')
+      .controller('AboutCtrl', function($scope, $rootScope) {
+        $rootScope.header = 'About Us';
+      });
+})();

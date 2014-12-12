@@ -101,9 +101,18 @@ body {
 .productsList {
   @include clearfix;
 }
-
 .product {
-  float: left;
+  .thumbnail {
+    position: relative;
+    min-height: 490px;
+    max-height: 490px;
+
+    .buttons {
+      position: absolute;
+      bottom: 0;
+      left: 13px;
+    }
+  }
 }
 
 @import "_feedback-form.scss";

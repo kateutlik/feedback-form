@@ -9,7 +9,11 @@
  */
 (function() {
   angular.module('feedbackFormApp')
-      .controller('HomeCtrl', function($scope, $rootScope) {
-        $rootScope.header = 'Home page';
+      .controller('ProductsCtrl', function($scope) {
+        $scope.addToCart = function($event, $index){
+          $event.preventDefault();
+          $scope.orderList[$index]++;
+        }
       });
+
 })();

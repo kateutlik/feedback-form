@@ -26,6 +26,7 @@
           <li ng-class="menuClass('home')"><a ng-href="#home">Home</a></li>
           <li ng-class="menuClass('about')"><a ng-href="#about">About</a></li>
           <li ng-class="menuClass('contacts')"><a ng-href="#contacts">Contacts</a></li>
+          <li ng-class="menuClass('cart')"><a ng-href="#cart" class="btn-info">Cart</a></li>
         </ul>
         <h3 class="text-muted" ng-bind="header"></h3>
       </div>
@@ -89,9 +90,12 @@
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/home.js"></script>
         <script src="scripts/controllers/feedback-form.js"></script>
+        <script src="scripts/controllers/products.js"></script>
+        <script src="scripts/controllers/cart.js"></script>
 
         <script src="scripts/directives/feedback-form.js"></script>
         <script src="scripts/directives/about-text.js"></script>
+        <script src="scripts/directives/products-list.js"></script>
         <!-- endbuild -->
 </body>
 </html>
